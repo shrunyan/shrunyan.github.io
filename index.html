@@ -12,9 +12,19 @@
 
 		var App = React.createClass({
 			render: function () {
+				getDefaultProps: function () {
+					return {
+						txt: 'Please add text',
+						cat: 0
+					}
+				},
+				propTypes: {
+					txt: React.PropTypes.string,
+					cat: React.PropTypes.number.isRequired
+				},
 				return (
 					<div>
-						<h1>Hello World</h1>
+						<h1>Hello World - {this.props.cat}</h1>
 						<p>{this.props.txt}</p>
 					</div>
 				);
