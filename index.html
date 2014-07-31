@@ -11,17 +11,17 @@
 		/** @jsx React.DOM */
 
 		var App = React.createClass({
+			getDefaultProps: function () {
+				return {
+					txt: 'Please add text',
+					cat: 0
+				}
+			},
+			propTypes: {
+				txt: React.PropTypes.string,
+				cat: React.PropTypes.number.isRequired
+			},
 			render: function () {
-				getDefaultProps: function () {
-					return {
-						txt: 'Please add text',
-						cat: 0
-					}
-				},
-				propTypes: {
-					txt: React.PropTypes.string,
-					cat: React.PropTypes.number.isRequired
-				},
 				return (
 					<div>
 						<h1>Hello World - {this.props.cat}</h1>
